@@ -1,4 +1,4 @@
-module github.com/sagikazarmark/crypt
+module github.com/karlma/crypt
 
 go 1.18
 

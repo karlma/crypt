@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sagikazarmark/crypt/backend/mock"
+	"github.com/karlma/crypt/backend/mock"
 )
 
 var pubring = `-----BEGIN PGP PUBLIC KEY BLOCK-----

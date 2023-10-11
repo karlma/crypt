@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sagikazarmark/crypt/backend"
+	"github.com/karlma/crypt/backend"
 )
 
 var (

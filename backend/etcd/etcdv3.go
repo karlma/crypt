@@ -3,16 +3,17 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"github.com/pkg/errors"
-	"github.com/sagikazarmark/crypt/backend"
-	"go.etcd.io/etcd/api/v3/mvccpb"
-	goetcdv3 "go.etcd.io/etcd/client/v3"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/karlma/crypt/backend"
+	"github.com/pkg/errors"
+	"go.etcd.io/etcd/api/v3/mvccpb"
+	goetcdv3 "go.etcd.io/etcd/client/v3"
 )
 
 type ClientV3 struct {
@@ -35,6 +36,8 @@ func NewV3(machines []string) (*ClientV3, error) {
 		if cli2, ok2 := oneclim[key]; !ok2 {
 			newClient, err := goetcdv3.New(goetcdv3.Config{
 				Endpoints: machines,
+				Username:  "root",
+				Password:  "123456",
 			})
 			if err != nil {
 				return nil, fmt.Errorf("creating new etcd client for crypt.backend.Client: %v", err)

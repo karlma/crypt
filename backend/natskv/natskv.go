@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/karlma/crypt/backend"
 	"github.com/nats-io/nats.go"
-	"github.com/sagikazarmark/crypt/backend"
 )
 
 type Client struct {
